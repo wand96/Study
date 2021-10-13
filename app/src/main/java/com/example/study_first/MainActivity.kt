@@ -9,6 +9,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Log.d("BasicSyntax", "로그를 출력합니다. method = Log.d")
+        var myName = "김선규"
+        var myAge: Int
+        myAge = 27
+        myAge = myAge + 1
+        Log.d("BasicSyntax", "myName = $myName, myAge = $myAge")
+
+
     }
 }
