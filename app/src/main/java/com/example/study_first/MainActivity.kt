@@ -9,29 +9,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //1. 값으로 컬렉션 생성하기
-        var mutableList = mutableListOf("MON", "TUE", "WED")
-        // 값을 추가합니다.
-        mutableList.add("THU")
-        // 값을 꺼냅니다.
-        Log.d("Collection", "mutableList의 첫 번째 값은 ${mutableList.get(0)}입니다.")
-        Log.d("Collection", "mutableList의 두 번째 값은 ${mutableList.get(1)}입니다.")
+        //1. 셋 생성하고 값 추가하기
+        var set = mutableSetOf<String>()
+        set.add("JAN")
+        set.add("FEB")
+        set.add("MAR")
+        set.add("JAN")
 
-        //2. 빈 컬렉션 생성하기
-        var stringList = mutableListOf<String>()
-        //값을 추가합니다.
-        stringList.add("월")
-        stringList.add("화")
-        stringList.add("수")
-        //값을 변경합니다
-        stringList.set(1, "요일 변경")
-        // 사용
-        Log.d("Collection", "stringList에 입력된 두 번째 값은 ${stringList.get(1)}입니다.")
-        //삭제
-        stringList.removeAt(1)
-        Log.d("Collection", "stringList에 입력된 두 번째 값은 ${stringList.get(1)}입니다.")
-        //개수를 출력합니다.
-        Log.d("Collection", "stringList에는 ${stringList.size}개의 값이 있습니다.")
+        //2. 전체 데이터 출력해보기
+        Log.d("Collection", "Set 전체 출력 = ${set}")
 
+        //3. 특정 값 삭제하기
+        set.remove("FEB")
+        Log.d("Collection", "Set 전체 출력 = ${set}")
     }
 }
