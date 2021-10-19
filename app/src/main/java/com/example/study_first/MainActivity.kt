@@ -9,21 +9,32 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //1. 맵 생성하기
-        var map = mutableMapOf<String, String>()
-        //2. 값 넣기
-        map.put("키1", "값2")
-        map.put("키2", "값2")
-        map.put("키3", "값3")
-        //3. 값 사용하기
-        var variable = map.get("키2")
-        Log.d("Collection", "키2의 값은 ${variable}입니다.")
-        //4.값 수정하기
-        map.put("키2", "두 번째 값 수정")
-        Log.d("Collection", "키2의 값은 ${map.get("키2")}입니다.")
-        //5. 값 삭제하기
-        map.remove("키2")
-        //5.1 없는 값을 불러오면 null 값이 출력된다.
-        Log.d("Collection", "키2의 값은 ${map.get("키2")}입니다.")
+        //1. 일반적인 반복문 사용으로 열 번 반복하기
+        for (index in 1..10){
+            Log.d("For", "현재 숫자는 ${index}")
+        }
+
+        //2. 마지막 숫자 제외하기
+        var array = arrayOf("JAN", "FEB", "MAR", "APR", "MAY", "JUN")
+        for (index in 0 until array.size) {
+            Log.d("For", "현재 월은 ${array.get(index)}입니다.")
+        }
+        //3. 건너뛰기
+        for (index in 0..10 step 3) {
+            Log.d("For", "건너뛰기: ${index}")
+        }
+        //4. 감소시키기
+        for (index in 10 downTo 0) {
+            Log.d("For", "감소시키기: ${index}")
+        }
+        //4.1 건너뛰면서 감소시키기
+        for (index in 10 downTo 0 step 3) {
+            Log.d("For", "건너뛰면서 감소시키기: ${index}")
+        }
+        //5.1 배열, 컬렉션 사용하기
+        for (month in array) {
+            Log.d("For", "현재 월은 ${month}입니다.")
+        }
     }
+
 }
