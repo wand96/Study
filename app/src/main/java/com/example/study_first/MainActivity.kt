@@ -10,25 +10,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //부모 클래스의 프로퍼티와 메서드 사용하기
-        open class Parent {
-            var hello: String = "안녕하세요."
-            fun sayHello() {
-                Log.d("inheritance", "${hello}")
-            }
+        //메서드 오버라이드
+        open class BaseClass {
+            open fun opened() {}
+            fun notOpened() {}
         }
 
-        class Child: Parent() {
-            fun myHello() {
-                hello = "Hello!"
-                sayHello()
-            }
+        class ChildClass: BaseClass() {
+            override fun opened() {}
         }
-
-        val a = Parent()
-        val b = Child()
-
-        a.sayHello()
-        b.myHello()
     }
 }
