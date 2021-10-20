@@ -10,15 +10,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //오브젝트: 클래스와 다르게 앱 전체에 1개만 생성됨
-        object Pig {
-            var name: String = "Pinky"
-
-            fun printName() {
-                Log.d("class", "Pig의 이름은 ${name}입니다.")
-            }
-        }
-        Pig.name = "Micky"
+        //2.companion object 안의 코드 사용하기
+        Pig.name = "Linda"
         Pig.printName()
+
+        //3. companion object 밖의 코드 사용하기
+        val cutePig = Pig()
+        cutePig.walk()
+    }
+}
+
+//1. 컴패니언 오브젝트(companion object): companion object 블록으로 감싸주면 생성 과정없이 오브젝트처럼 사용가능
+class Pig {
+    companion object {
+        var name: String = "None"
+        fun printName() {
+            Log.d("class", "Pig의 이름은 ${name}입니다.")
+        }
+    }
+    fun walk() {
+        Log.d("class", "Pig가 걸어갑니다.")
     }
 }
