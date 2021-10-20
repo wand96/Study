@@ -10,14 +10,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //메서드 오버라이드
-        open class BaseClass {
-            open fun opened() {}
-            fun notOpened() {}
+        //프로퍼티 오버라이드
+        open class BaseClass2 {
+            open var opened: String = "I am"
         }
-
-        class ChildClass: BaseClass() {
-            override fun opened() {}
+        class ChildClass2: BaseClass2() {
+            override var opened: String = "You are"
         }
     }
 }
