@@ -10,16 +10,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //데이터 클래스: 간단한 값의 저장 용도로 사용
-        //*생성자 파라미터 앞에 입력하는 var(또는 val) 키워드는 생략할 수 없음
+        //부모 클래스의 프로퍼티와 메서드 사용하기
+        open class Parent {
+            var hello: String = "안녕하세요."
+            fun sayHello() {
+                Log.d("inheritance", "${hello}")
+            }
+        }
 
-        //정의 - 주로 코드 블록(클래스 스코프)을 사용하지 않고 간단하게 작성합니다.
-        data class UserData(val name: String, var age: Int)
-        //생성 - 일반 class의 생성자 함수를 호출하는 것과 동일합니다.
-        var userData = UserData("Michael", 21)
+        class Child: Parent() {
+            fun myHello() {
+                hello = "Hello!"
+                sayHello()
+            }
+        }
 
-        //name은 val로 선언되었기 때문에 변경 불가능
-        //age는 var로 선언되었기 때문에 변경 가능
-        userData.age = 18
+        val a = Parent()
+        val b = Child()
+
+        a.sayHello()
+        b.myHello()
     }
 }
