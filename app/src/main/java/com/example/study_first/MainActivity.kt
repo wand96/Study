@@ -10,9 +10,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //반환값과 입력값이 있는 함수의 정의
-        fun square(x: Int): Int {
-            return x * x
+        //반환값이 없는 함수의 정의
+        fun printSum(x: Int, y: Int) {
+            Log.d("fun", "x + y = ${x+y}")
         }
+
+        printSum(10, 15)
     }
 }
