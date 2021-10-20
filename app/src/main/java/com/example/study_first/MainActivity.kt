@@ -10,12 +10,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        fun newFunction(name: String, age: Int = 29, weight:Double = 65.5) {
-            Log.d("fun", "name의 값은 ${name}입니다.")
-            Log.d("fun", "age의 값은 ${age}입니다.")
-            Log.d("fun", "weight의 값은 ${weight}입니다.")
+        //클래스: 프로퍼티 1개, 메서드 1개
+        class Pig {
+            var name: String = "Pinky"
+            fun printName() {
+                Log.d("class", "Pig의 이름은 ${name}입니다.")
+            }
         }
 
-        newFunction("Hello")
+        //Pig클래스를 생성자로 인스턴스화 해서 변수에 담음
+        var pig = Pig()
+
+        //인스턴스가 담긴 pig 변수로 프로퍼티와 메서드를 사용
+        pig.name = "Pooh"
+        pig.printName()
     }
 }
