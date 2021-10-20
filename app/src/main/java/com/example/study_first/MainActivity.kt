@@ -10,25 +10,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //2.companion object 안의 코드 사용하기
-        Pig.name = "Linda"
-        Pig.printName()
+        //데이터 클래스: 간단한 값의 저장 용도로 사용
+        //*생성자 파라미터 앞에 입력하는 var(또는 val) 키워드는 생략할 수 없음
 
-        //3. companion object 밖의 코드 사용하기
-        val cutePig = Pig()
-        cutePig.walk()
-    }
-}
+        //정의 - 주로 코드 블록(클래스 스코프)을 사용하지 않고 간단하게 작성합니다.
+        data class UserData(val name: String, var age: Int)
+        //생성 - 일반 class의 생성자 함수를 호출하는 것과 동일합니다.
+        var userData = UserData("Michael", 21)
 
-//1. 컴패니언 오브젝트(companion object): companion object 블록으로 감싸주면 생성 과정없이 오브젝트처럼 사용가능
-class Pig {
-    companion object {
-        var name: String = "None"
-        fun printName() {
-            Log.d("class", "Pig의 이름은 ${name}입니다.")
-        }
-    }
-    fun walk() {
-        Log.d("class", "Pig가 걸어갑니다.")
+        //name은 val로 선언되었기 때문에 변경 불가능
+        //age는 var로 선언되었기 때문에 변경 가능
+        userData.age = 18
     }
 }
