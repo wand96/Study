@@ -10,19 +10,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //클래스: 프로퍼티 1개, 메서드 1개
-        class Pig {
+        //오브젝트: 클래스와 다르게 앱 전체에 1개만 생성됨
+        object Pig {
             var name: String = "Pinky"
+
             fun printName() {
                 Log.d("class", "Pig의 이름은 ${name}입니다.")
             }
         }
-
-        //Pig클래스를 생성자로 인스턴스화 해서 변수에 담음
-        var pig = Pig()
-
-        //인스턴스가 담긴 pig 변수로 프로퍼티와 메서드를 사용
-        pig.name = "Pooh"
-        pig.printName()
+        Pig.name = "Micky"
+        Pig.printName()
     }
 }
