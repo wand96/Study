@@ -10,19 +10,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         
-        //오류가 날 수 밖에 없는 상황
-        //one이 One의 형식으로 생성되었지만 생성자를 호출해서 저장되지는 않음
-        //1>2가 false라서 비어있는 상태로 one변수는 null임 
-        var one: One
-        if (1 > 2) {
-            one = One()
-        }
-        one.print()
-    }
-}
+        //null값 허용하기: ?
+        //코틀린에서 지정하는 기본 변수는 모두 null이 입력되지 않음
+        //null값을 입력하기 위해서는 변수를 선언할 때 타입 뒤에 ?(Nullable)을 입력해야한다.
 
-class One {
-    fun print() {
-        Log.d("null_safety", "can you call me?")
+        var variable: String?
     }
 }
