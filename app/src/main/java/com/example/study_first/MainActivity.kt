@@ -10,11 +10,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         
-        //함수의 파라미터가 null을 허용하려면 해당 파라미터에 대해서 null 체크를 먼저 해야함
-        fun nullParameter(str: String?) {
-            if(str != null) {
-                var length2 = str.length
-            }
+        //함수의 리턴 타입에도 물음표를 붙여서 null 허용 여부를 설정할 수 있습니다.
+        fun nullReturn(): String? {
+            return null
         }
     }
 }
