@@ -10,13 +10,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         
-        //안전한 호출: ?.
-        //변수 다음에 ?.을 사용하면 해당 변수가 null일 경우 ?.을 사용해서 null 체크를 좀 더 간결하게 사용 가능
-        fun testSafeCall(str: String?): Int? {
-            //str이 null이면 length를 체크하지 않고 null을 반환합니다.
-            var resultNull: Int? = str?.length
-
-            return resultNull;
+        //Null 값 대체하기: ?:
+        fun testElvis(str: String?): Int {
+            //length 오른쪽에 ?:을 사용하면 null일 경우 ?: 오른쪽의 값이 반환됩니다.
+            var resultNonNull: Int = str?.length?:0
+            return resultNonNull
         }
+
     }
 }
