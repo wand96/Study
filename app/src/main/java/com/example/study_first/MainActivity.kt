@@ -10,12 +10,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         
-        //Null 값 대체하기: ?:
-        fun testElvis(str: String?): Int {
-            //length 오른쪽에 ?:을 사용하면 null일 경우 ?: 오른쪽의 값이 반환됩니다.
-            var resultNonNull: Int = str?.length?:0
-            return resultNonNull
-        }
+        //lateinit
+        //변수(프로퍼티)만 Nullable로 미리 선언하고 초기화(생성자 호출)를 나중에 해야 할 경우가 있는데, 이때 사용
 
     }
 }
