@@ -9,9 +9,21 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        
-        //lateinit
-        //변수(프로퍼티)만 Nullable로 미리 선언하고 초기화(생성자 호출)를 나중에 해야 할 경우가 있는데, 이때 사용
+
+
+
+        //lateinit을 사용하는 방법
+        class Person {
+            lateinit var name: String
+            init {
+                name = "Lionel"
+            }
+            fun process() {
+                name.plus("Messi")
+                print("이름의 길이 = ${name.length}")
+                print("이름의 첫 글자 = ${name.substring(0,1)}")
+            }
+        }
 
     }
 }
