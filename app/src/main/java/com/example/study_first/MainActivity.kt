@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        //lateinit을 사용하는 방법
+
         class Person {
             lateinit var name: String
             init {
