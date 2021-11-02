@@ -11,9 +11,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-
-
-        class Person {
+        //lazy
+        //lazy는 읽기 전용 변수 val을 사용하는 지연 초기화 입니다.
+        class Person{
             lateinit var name: String
             init {
                 name = "Lionel"
@@ -25,5 +25,14 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        class Company {
+            val person: Person by lazy{Person()}
+            init {
+                //lazy는 선언 시에 초기화를 하기 때문에 초기화 과정이 필요 없습니다.
+            }
+            fun process() {
+                print("person의 이름은 ${person.name}")
+            }
+        }
     }
 }
