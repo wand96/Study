@@ -11,28 +11,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        //lazy
-        //lazy는 읽기 전용 변수 val을 사용하는 지연 초기화 입니다.
-        class Person{
-            lateinit var name: String
-            init {
-                name = "Lionel"
-            }
-            fun process() {
-                name.plus("Messi")
-                print("이름의 길이 = ${name.length}")
-                print("이름의 첫 글자 = ${name.substring(0,1)}")
-            }
+        //스코프함수
+        //run: 스코프 함수 안에서 호출한 대상을 this로 사용할 수 있습니다.
+        //클래스 내부의 함수를 사용하는 것과 동일한 효과이기 때문에 this는 생략하고 메서드나 프로퍼티를 바로 사용할 수 있다.
+        var list = mutableListOf("Scope", "Function")
+        list.run {
+            val listSize = size
+            println("리스트의 길이 run = $listSize")
         }
 
-        class Company {
-            val person: Person by lazy{Person()}
-            init {
-                //lazy는 선언 시에 초기화를 하기 때문에 초기화 과정이 필요 없습니다.
-            }
-            fun process() {
-                print("person의 이름은 ${person.name}")
-            }
-        }
     }
 }
