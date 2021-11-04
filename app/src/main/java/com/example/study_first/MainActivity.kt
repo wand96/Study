@@ -12,11 +12,16 @@ class MainActivity : AppCompatActivity() {
 
 
         //스코프함수
-        //let: 함수 영역 안에서 호출한 대상을 it으로 사용할 수 있습니다.
+        //this로 사용되는 스코프 함수: run, apply, with
         var list = mutableListOf("Scope", "Function")
-        list.let { //it -> 생략된 형태. it -> 대신에 target -> 등으로 변경 가능합니다.
-            val listSize = it.size //모든 속성과 함수를 it.멤버로 사용할 수 있습니다.
-            println("리스트의 길이 let = $listSize")
+        list.apply {
+            val listSize = size
+            println("리스트의 길이 apply = $listSize")
+        }
+
+        with(list) {
+            val listSize = size
+            println("리스트의 길이 with = $listSize")
         }
     }
 }
