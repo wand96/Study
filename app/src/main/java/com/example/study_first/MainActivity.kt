@@ -12,13 +12,11 @@ class MainActivity : AppCompatActivity() {
 
 
         //스코프함수
-        //run: 스코프 함수 안에서 호출한 대상을 this로 사용할 수 있습니다.
-        //클래스 내부의 함수를 사용하는 것과 동일한 효과이기 때문에 this는 생략하고 메서드나 프로퍼티를 바로 사용할 수 있다.
+        //let: 함수 영역 안에서 호출한 대상을 it으로 사용할 수 있습니다.
         var list = mutableListOf("Scope", "Function")
-        list.run {
-            val listSize = size
-            println("리스트의 길이 run = $listSize")
+        list.let { //it -> 생략된 형태. it -> 대신에 target -> 등으로 변경 가능합니다.
+            val listSize = it.size //모든 속성과 함수를 it.멤버로 사용할 수 있습니다.
+            println("리스트의 길이 let = $listSize")
         }
-
     }
 }
