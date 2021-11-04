@@ -12,16 +12,19 @@ class MainActivity : AppCompatActivity() {
 
 
         //스코프함수
-        //it으로 사용되는 스코프 함수: let, also
+        //호출 대상인 this 자체를 반환하는 스코프 함수: apply, also
         var list = mutableListOf("Scope", "Function")
-        list.let { target -> //it을 target 등과 같이 다른 이름으로 변경가능합니다.
-            val listSize = target.size //target으로 변경했기 때문에 멤버 접근은 target.속성입니다.
-            println("리스트의 길이 let = $listSize")
-        }
 
-        list.also {
-            val listSize = it.size
-            println("리스트의 길이 also = $listSize")
+        val afterApply = list.apply {
+            add("Apply")
+            count()
         }
+        println("반환값 apply = $afterApply")
+
+        val afterAlso = list.also {
+            it.add("Also")
+            it.count()
+        }
+        println("반환값 also = $afterAlso")
     }
 }
