@@ -4,33 +4,21 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.core.util.rangeTo
+import androidx.core.widget.addTextChangedListener
+import com.example.study_first.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    val binding by lazy { ActivityMainBinding.inflate(layoutInflater)}
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
+        setContentView(binding.root)
 
-        //스코프함수
-        //마지막 실행 코드를 반환하는 스코프 함수: let, run, with
-        var list = mutableListOf("Scope", "Function")
-
-        val lastCount = list.let {
-            it.add("Run")
-            it.count()
+        binding.editText.addTextChangedListener {
+            Log.d("EditText", "현재 입력된 값 = ${it.toString()}")
         }
-        println("반환값 let = $lastCount")
 
-        val lastItem = list.run {
-            add("Run")
-            get(size-1)
-        }
-        println("반환값 run = $lastItem")
-
-        val lastItemWith = with(list) {
-            add("with")
-            get(size-1)
-        }
-        println("반환값 with = $lastItemWith")
     }
 }
