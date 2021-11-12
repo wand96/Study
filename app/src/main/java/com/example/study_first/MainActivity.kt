@@ -16,9 +16,13 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-        binding.editText.addTextChangedListener {
-            Log.d("EditText", "현재 입력된 값 = ${it.toString()}")
-        }
+       binding.RadioGroup.setOnCheckedChangeListener { group, checkedId ->
+           when(checkedId) {
+               R.id.radioApple -> Log.d("RadioButton", "사과가 선택되었습니다.")
+               R.id.radioBanana -> Log.d("RadioButton", "바나나가 선택되었습니다.")
+               R.id.radioOrange -> Log.d("RadioButton", "오렌지가 선택되었습니다.")
+           }
+       }
 
     }
 }
