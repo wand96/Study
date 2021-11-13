@@ -1,4 +1,4 @@
-package com.example.study_first
+  package com.example.study_first
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,13 +16,10 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-       binding.RadioGroup.setOnCheckedChangeListener { group, checkedId ->
-           when(checkedId) {
-               R.id.radioApple -> Log.d("RadioButton", "사과가 선택되었습니다.")
-               R.id.radioBanana -> Log.d("RadioButton", "바나나가 선택되었습니다.")
-               R.id.radioOrange -> Log.d("RadioButton", "오렌지가 선택되었습니다.")
-           }
-       }
+        binding.checkApple.setOnCheckedChangeListener { checkBox, isChecked ->
+            if(isChecked) Log.d("CheckBox", "사과가 선택되었습니다.")
+            else Log.d("CheckBox", "사과가 선택 해제되었습니다.")
+        }
 
     }
 }
