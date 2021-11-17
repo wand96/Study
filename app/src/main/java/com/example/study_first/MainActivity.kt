@@ -19,20 +19,10 @@ import kotlin.concurrent.thread
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.seekBar.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
-            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                binding.textView.text = "$progress"
-            }
+        binding.ratingBar.setOnRatingBarChangeListener { ratingBar, rating, fromUser ->
+            binding.textView.text = "$rating"
+        }
 
-            override fun onStartTrackingTouch(p0: SeekBar?) {
-                //TODO("Not yet implemented")
-            }
-
-            override fun onStopTrackingTouch(p0: SeekBar?) {
-                //TODO("Not yet implemented")
-            }
-
-        })
 
     }
 
