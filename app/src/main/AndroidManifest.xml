@@ -20,3 +20,5 @@
     </application>
 
 </manifest>
+
+    <!--        application 태그의 icon속성에 파일을 입력하면 아이콘이 설정됨-->

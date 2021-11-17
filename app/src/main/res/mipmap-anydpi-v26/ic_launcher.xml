@@ -2,4 +2,7 @@
 <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
     <background android:drawable="@drawable/ic_launcher_background" />
     <foreground android:drawable="@drawable/ic_launcher_foreground" />
+
+//백그라운드 이미지는 초록색 바탕이고 포어그라운드는 안드로이드 이미지임.
 </adaptive-icon>
+
