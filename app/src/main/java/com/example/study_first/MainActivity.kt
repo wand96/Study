@@ -1,5 +1,6 @@
   package com.example.study_first
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -19,10 +20,11 @@ import kotlin.concurrent.thread
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.ratingBar.setOnRatingBarChangeListener { ratingBar, rating, fromUser ->
-            binding.textView.text = "$rating"
-        }
+        val intent = Intent(this, SubActivity::class.java)
+        intent.putExtra("from1", "Hello Bundle")
+        intent.putExtra("from2", 2021)
 
+        binding.btnStart.setOnClickListener { startActivity(intent) }
 
     }
 

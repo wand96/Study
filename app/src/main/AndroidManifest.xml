@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Study_first">
-        <activity android:name=".MainActivity"
+        <activity android:name=".SubActivity"></activity>
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,5 +22,3 @@
     </application>
 
 </manifest>
-
-    <!--        application 태그의 icon속성에 파일을 입력하면 아이콘이 설정됨-->
